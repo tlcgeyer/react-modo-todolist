@@ -27,11 +27,11 @@
 * id attributes MUST BE UNIQUE 
 * npm i nanoid is used to create unique IDs for our new tasks / npm i uuid -- import {v4}
 
-6. Making an <Todo/> component:
-# create a `components` directory
+# Making an <Todo/> component:
+ create a `components` directory
 mkdir src/components
 
-# within `components`, create a file called `Todo.jsx`
+ within `components`, create a file called `Todo.jsx`
 touch src/components/Todo.jsx
 
 7. CALLBACK PROPS: 

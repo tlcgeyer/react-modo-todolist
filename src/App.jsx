@@ -10,6 +10,9 @@ function App(props) {
 
   // state
   const [completed, setCompleted] = useState([])
+
+  const [tasksCompleted, setTasksCompleted] = useState()
+
   const [inCompleted, setInCompleted] = useState([])
    //Deleting a task
    function deleteTask({id}) {
@@ -24,13 +27,16 @@ function App(props) {
  
   // state of the button(when marked completed needs to be remained that way)
   function activeState({id}) {
+  console.log("ID: ", id);
+  console.log("TASKS: ", tasks)
    let activatedState = tasks.map(item =>
       id === item.id
           ? { ...item, completed: !item.completed }
-          : item
+          : {...item}
   );
     
     let newArr = activatedState;
+    console.log("newArr: ", newArr)
     window.localStorage.setItem("todo-list", JSON.stringify(newArr));
     // console.log(activeState, "here");
   }
@@ -126,6 +132,7 @@ function App(props) {
 
   }, [])
 
+  console.log(completed, "completed")
 
   //---------------------------------------------------------------- 
 
@@ -135,7 +142,7 @@ function App(props) {
   return (
     <div className="todoapp stack-large">
       <h1>Todo List</h1>
-      <Form addTask={addTask} />
+      <Form addTask={addTask} />  
 
       <div className="filters btn-group stack-exception">
         <FilterButton

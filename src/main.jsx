@@ -5,11 +5,7 @@ import './index.css'
 
 const storageData = window.localStorage.getItem('todo-list')
 
-const DATA = storageData ? JSON.parse(storageData) : [
-  { id: "todo-0", name: "Eat", completed: true },
-  { id: "todo-1", name: "Sleep", completed: false },
-  { id: "todo-2", name: "Repeat", completed: false },
-]; 
+const DATA = storageData ? JSON.parse(storageData) : []; 
 
 
 createRoot(document.getElementById('root')).render(
